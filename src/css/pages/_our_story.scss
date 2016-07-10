@@ -1,0 +1,139 @@
+.ourStoryHeader{
+  background-size: cover;
+  background: $white url('/img/bom/ill-ourStory.svg') no-repeat center bottom;
+  .narrowContent{ margin: 30px auto 140px;}
+  h4{
+    line-height: 33px;
+    margin: 20px;
+  }
+}
+
+//================
+// for timeline
+//================
+
+.timeLine{
+  .carouselSlides{ height: 510px; }
+  .checkerboard {
+    position: relative;
+    height: 510px;
+  }
+  .square.image{
+    background-color: $gray30pct;
+    background-position: center;
+    background-size: cover;
+  }
+  .square.content{
+    padding: 0 60px;
+    .innerContent{ max-width: 560px;}
+  }
+}
+.subwayMapWrapper {
+  background-color: $gray10pct;
+  padding: 30px 0;
+  text-align: center;
+  ul {
+    list-style: none;
+    list-style-type: none;
+    margin: 0 auto;
+  }
+  li { display: inline-block; }
+}
+.subwayMapLinks{
+  li {
+    width: 10%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    > div{ display: inline-block; }
+  }
+}
+.subwayMapLinks > li > div:nth-of-type(odd) {
+  background-color: #000000;
+  height: 2px;
+  width: 45%;
+  margin: 7px 0;
+}
+
+.subwayMapLinks > li > div:nth-of-type(even) {
+  width:10%;
+  text-align: center;
+}
+.circle {
+  position: relative;
+  border: 2px solid #000000;
+  background-color: $white;
+  height: 15px;
+  width: 15px;
+  margin: 0 auto;
+  z-index: 10;
+  @include border-radius(50%);
+}
+.textLinks {
+  display: block;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.active{
+  .circle{ background-color: $turquoise; }
+  .textLinks{ color: $turquoise; }
+}
+.noLine { background-color: transparent!important; }
+
+
+.getStarted{
+  h1{
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+}
+//================
+// for mobile
+//================
+
+@media screen and ( max-width: 800px ){
+  .subwayMapLinks{
+    li{ width: 14%;}
+    .textLinks { font-size: 12px;}
+  }
+  .timeLine .checkerboard {
+    display: block;
+    .square{
+      width: 100%;
+      &.image{ height: 200px; display: block;}
+      &.square.content{
+        vertical-align: middle;
+        display: table-cell;
+        padding: 0;
+        height: 310px;
+        .innerContent{
+          padding: 20px;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .ourStoryHeader .narrowContent{ margin-top: 10px; }
+}
+
+@media screen and ( max-width: 480px){
+  .ourStoryHeader{
+    h4{
+      line-height: 25px;
+      margin: 20px 0;
+    }
+  }
+  .timeLine {
+    .carouselSlides{ height: 610px; }
+    .checkerboard {
+      .square{
+        &.image{ height: 200px; }
+        &.square.content{ height: 410px;}
+      }
+    }
+  }
+}

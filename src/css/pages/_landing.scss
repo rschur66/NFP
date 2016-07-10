@@ -1,0 +1,226 @@
+
+// ============================
+// Selections
+// ============================
+.landingPage .selections{
+  padding: 0 0 40px 0;
+  .sliderWrapper{ margin: 30px auto; }
+}
+
+// ============================
+// Judges
+// ============================
+.landingJudges{
+  .content{
+    max-width: 560px;
+    img{ width: 100%; }
+  }
+
+  .left{
+    padding: 80px 0;
+    background-color: $gray10pct;
+    vertical-align: top;
+    text-align: center;
+  }
+  .square.content.right{
+    background-color: $navy;
+    h1{ color: $turquoise; }
+    padding: 70px;
+    h1, h4, .smallText, a.h6{ font-style: initial; }// needed to stop inheriting from dangerously set html
+    .smallText{  margin: 20px 0; }
+    .-w40{ text-align: right;}
+  }
+  .mobileRight{
+    display: none;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: $navy;
+  }
+  .video{ text-align: center;}
+
+  .sliderWrapper{
+    max-width: 600px;
+    margin-top: 30px;
+    .sliderItem{
+      width: 30%;
+      display: inline-block;
+    }
+    .sliderItemsContainer{
+      li{ margin-bottom: 30px; }
+    }
+    .judge{
+      cursor: pointer;
+      display: inline-block;
+      .judgeListImg {
+        height: 128px;
+        border-radius: 50%;
+        border: 3px solid $white;
+        margin: 0 10px;
+        &.active{ border-color: $turquoise;}
+      }
+      h5 { margin: 0 12px; }
+    }
+  }
+}
+
+// ============================
+// Magazine
+// ============================
+.LandingMagazine{
+  background-color: $white;
+  svg{ margin-bottom: 20px;}
+  p{ margin-top: 10px;}
+  text-align: center;
+}
+
+// ============================
+// Members
+// ============================
+.landingMembers{
+  padding: 62px 0 20px;
+  h6{ margin-bottom: 5px; }
+  .socialMedia{
+    margin: 20px 0 40px;
+    svg{
+      margin: 0 10px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .sliderItem{ padding: 0 10px 0 0;
+    img{
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  }
+  .memberSocialDetails.modal{
+    width: auto;
+    padding: 0;
+    overflow: initial;
+    text-align: center;
+    max-height: 1000px;
+    img{ width: 400px; }
+    .bottom{
+      margin: 0 auto;
+      padding: 30px 20px;
+      max-width: 380px;
+    }
+    .memberName{ margin-bottom: 10px; }
+    .pointer{ top: 190px; }
+    .pointer.left{ left: -40px; }
+    .pointer.right{ right: -40px; }
+  }
+}
+
+
+// ============================
+// As Seen On
+// ============================
+.LandingAsSeenOn{ // not currently used!!
+  background-color: $gray10pct;
+  li{
+    display: inline-block;
+    text-align: center;
+    margin: 0 0 0 10%;
+    &:first-of-type{ margin-left: 0; }
+    svg{ height: 25px; }
+  }
+}
+
+
+// ===================
+// for mobile
+// ===================
+
+@media screen and (max-width: 1250px){
+  .landingJudges.checkerboard{
+    .square.content.right{
+      padding: 40px;
+      .content{ 
+        max-width: auto; 
+        img{ max-width: 250px;}
+        h1{ text-align: center;}
+      }
+      .-w60{
+        width: 100%;
+        text-align: center;
+      }
+      .-w40{
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px){
+  .landingPage .checkerboard .square.image{ vertical-align: top; }
+
+  .LandingAsSeenOn{
+    padding: 0;
+    li{
+      display: inline-block;
+      text-align: center;
+      margin: 10px 0;
+      svg{ height: 20px; }
+    }
+  }
+  .landingAbout{
+    &.checkerboard .square{
+      display: block;
+      width: 100%;
+      text-align: center;
+      &.content{ padding: 0}
+      &.forDesktop{ display: none;}
+    }
+  }
+}
+
+@media screen and (max-width: 800px){
+  .landingJudges.checkerboard{
+    display: block;
+    .content{
+      text-align: center;
+      max-width: 100%;
+    }
+    .sliderWrapper {
+      .judge h5 { margin: 0; }
+      .sliderItemsContainer li{ display: table-cell; }
+    }
+    .left{
+      display: block;
+      width: 100%;
+      padding: 40px 0;
+    }
+  }
+  .landingMembers{
+    .sliderItem{
+      img{ width: 220px; }
+    }
+  }
+}
+
+@media screen and ( max-width: 640px ){
+  .landingMembers{
+    padding: 40px 0 20px;
+    .pointer{ display: none;}
+    .memberSocialDetails.modal{
+      position: absolute;
+      transform: translate(-50%, 0);
+      width: 100%;
+      max-width: 320px;
+      top: 20px;
+      img{ width: 100%; }
+    }
+  }
+}
+
+
+@media screen and (max-width: 480px){
+  .LandingHeroes{
+    .carouselBullets{ display: none;}
+  }
+}

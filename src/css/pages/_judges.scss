@@ -1,0 +1,85 @@
+.judges{
+  .guest{ 
+    background-color: $gray10pct;
+    .sliderItem { vertical-align: top; }
+  }
+  .modalWindow{
+    .content{ 
+      background-color: $navyLight; 
+      text-align: left;
+    }
+    .selections{ background-color: $navyHover; }
+  }
+  .judgeListImg{ 
+    width: 120px;
+    height: 160px;
+  }
+  .judgeName{ font-weight: bold;}
+  .judgeRole{
+    font-style: italic;
+    line-height: 20px;
+  }
+  h3{ 
+    margin: 20px 0 40px;
+    color: $turquoise;
+  }
+}
+
+/* ==================
+ Judge Details
+================== */
+.judgeDetails{
+  .judgeHeader{
+    text-align: center;
+    padding: 20px;
+    li{ width: 100%; }
+    .judgeImg{ width: 185px; }
+    .pointer{ 
+      top: 180px; 
+      &.left{ left: 160px; }
+      &.right{ right: 160px; }
+    }
+  }
+  .sliderItemsContainer li{ margin: 10px;}
+  .socialMediaIcon svg{ 
+    margin: 5px 10px;
+    width: auto;
+    height: 26px;
+  }
+  h5{ max-width: 120px; }
+}
+
+
+//================
+// for mobile
+//================
+
+@media screen and (max-width: 800px){
+  .guest{ 
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 640px){
+  .judges{
+    h3{ margin: 20px 0; }
+    .sliderItemsContainer .sliderItem{  padding: 0 10px;}
+  }
+  .reocurring{ padding: 20px 0 }
+  .judgeDetails .judgeHeader .pointer.left{ left: 40px; }
+  .judgeDetails .judgeHeader .pointer.right{ right: 40px; }
+}
+
+@media screen and (max-width: 480px) {
+  .judges{ //@TODO Make reusable elemtn page modal. currently shared with selections details
+    .modalWrapper{ z-index: 1; }
+    .modalClose{ display: none;}
+    .pageModal .flag{ width: 100%; }
+  }
+  .judgeDetails{
+    .judgeHeader{
+      .judgeImg{ width: 160px; }
+      .pointer{ display: none; }
+    }
+  }
+}

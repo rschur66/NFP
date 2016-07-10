@@ -1,0 +1,82 @@
+@import '../theme/colors';
+
+
+/**==========================================
+Basic Reset Styles adapted from Eric Meyer's
+HTML5 CSS Reset Stylesheet
+============================================**/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box; // For legacy WebKit based browsers
+  -moz-box-sizing: border-box; // For all Gecko based browsers
+  box-sizing: border-box;
+  font-weight: initial;
+}
+
+
+// HTML5 display-role reset for older browsers
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+ol, ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button, input, select, textarea {
+  font-family: inherit; 
+  font-size: 100%;
+  -webkit-box-sizing: border-box; // For legacy WebKit based browsers
+  -moz-box-sizing: border-box; // For all Gecko based browsers
+  box-sizing: border-box;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px $tan inset; // kill yellow Chrome autofill highlight
+}
+
+select:disabled, option:disabled {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+}
+
+// select, option {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   background: none;
+// }
+
+select:-moz-focusring { // kill ugly dashed line around focused selects in Firefox
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+hr{
+  border: none;
+  height: 1px;
+  background-color: $gray30pct;
+  color: $gray30pct;
+}

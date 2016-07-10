@@ -1,0 +1,42 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius   : $radius;
+  -ms-border-radius    : $radius;
+  border-radius        : $radius;
+}
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition   : $args;
+  -ms-transition    : $args;
+  -o-transition     : $args;
+  transition        : $args;
+}
+
+@mixin transform($transforms) {
+  -moz-transform    : $transforms;
+  -o-transform      : $transforms;
+  -ms-transform     : $transforms;
+  -webkit-transform : $transforms;
+  transform         : $transforms;
+}
+
+// translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+@mixin box-shadow($args) {
+  -webkit-box-shadow : $args;
+  -moz-box-shadow    : $args;
+  -o-box-shadow      : $args;
+  box-shadow         : $args;
+}
+
+@mixin opacity($opacity) {
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity";
+  filter: alpha(opacity=$opacity);//IE8
+  -khtml-opacity: $opacity;
+  -moz-opacity  : $opacity;
+  opacity       : $opacity;
+}

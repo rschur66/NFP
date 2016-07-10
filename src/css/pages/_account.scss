@@ -1,0 +1,520 @@
+.account{
+  .navForMobile{display: none;}
+  .navForDesktop{display: block;}
+  .sideNav{
+    border: $defaultBorder;
+    border-right: none;
+    text-align: left;
+    margin: 40px -1px 100px 0;
+    background-color: $white;
+    z-index: 10;
+    a{
+      border-left: 6px solid $white;
+      display: block;
+      span.sideLink{
+        border-bottom: 1px solid $grayDark;
+        width: 85%;
+        display: block;
+        margin-left: 18px;
+        padding: 12px 0;
+      }
+      &:last-of-type{
+        span.sideLink{ border-bottom: none ;}
+      }
+      &.active{
+        color: $navy;
+        border-left: 6px solid $navy;
+      }
+    }
+  }
+  .mainContent{
+    padding: 0 40px;
+    border: $defaultBorder;
+    margin: 40px -2px 40px 0;
+    min-height: 320px;
+    background-color: $white;
+  }
+  .dataTable{ margin-bottom: 20px; }
+  .shippingInfo{ clear: both; }// @TODO need to fix account info floats
+  .planInfo{ clear: both; }// @TODO need to fix account info floats
+  .accountInfo{
+    clear: both;
+    float: left;
+    .profileImageWrapper{
+      width: 20%;
+      float: right;
+      .profileImageBorder{
+        border: $defaultBorder;
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        border-radius: 60px;
+      }
+      .memberPhoto{
+        width: 100%;
+        max-width: 120px;
+      }
+    }
+    .content{
+      width: 80%;
+      float: left;
+      padding-right: 20px;
+    }
+  }
+  fieldset, .confirmationActions{ max-width: 600px; }
+}
+
+
+//=======================
+// Login
+//=======================
+.login{
+  .borderedBox{ padding: 40px; }
+  .forgotPassword{ text-align: right;}
+  button, .button{ width: 100%; }
+  form{ padding-top: 10px; }
+  .join{
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px 0 20px;
+    border-top: $defaultBorder;
+    h5{ margin-bottom: 10px;}
+  }
+}
+
+//=======================
+// Payment and plans
+//=======================
+.account{ 
+  .paymentPlans{
+    h4{
+      margin-bottom: 10px;
+      color: $navy;
+      font-weight: 700;
+    }
+    .sub{
+      font-weight: 100;
+      color: $grayDark;
+    }
+    h3{ margin-bottom: 20px; }
+
+    .paymentBlock{
+      border-bottom: 1px solid $gray30pct;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+    }
+    
+  }
+  .planInfo{
+    fieldset{ max-width: 100%; }
+    .customBigSelects.alt .topContent{ width: 200px; }
+    .customBigSelects.alt .bottomContent{ width: 200px; height: 315px}
+    form{
+      .confirmationActions{
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+    .button{width: 250px;}
+  }
+}
+
+//=======================
+// Refer A Friend
+//=======================
+.referFriend{
+  .group{ margin-bottom: 40px;}
+  .referrals{
+    p{ margin: 5px 0 20px 0;}
+  }
+}
+
+//=======================
+// My Box
+//=======================
+.myBox{
+  .innerWrapper{
+    max-width: 700px;
+    padding: 40px 20px;
+  }
+  .show{ display: inline-block; }
+  .toggledContent{ width: 100%; }
+  .borderedBox{ padding: 0px; }
+  section{ padding: 20px 40px; }
+  .boxHeader{
+    padding-bottom: 17px;
+    border-bottom: $defaultBorder;
+    position: relative;
+    h2{  margin-bottom: 0; }
+    .pointer{
+      position: absolute;
+      top: 18px;
+      &.right{ right: 30px;}
+      &.left{ left: 30px; }
+    }
+  }
+}
+
+.swagWrapper{
+  border-top: $defaultBorder;
+  padding-top: 40px;
+  .boxItem{ 
+    width: 150px;
+    height: 150px;
+    &.full{ border: $defaultBorder; }
+  }
+}
+
+.boxMessage{
+  display: table;
+  margin: auto;
+  width: auto;
+  max-width: 675px;
+  .col{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  img{
+    width: 110px;
+    margin-right: 10px;
+  }
+  a span.nowrap { padding-left: 5px; }
+}
+.boxItemWrapper{
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  &.BOM{ width: 35% }
+  &.additionalBooks{ width: 65%; }
+  &.pastBooks{ display: block; margin: 0 auto;}
+}
+
+.boxItemHolder{
+  display: inline-block;
+  padding: 20px;
+}
+
+.additionalBooks{
+  .boxItemHolder{ padding: 20px 24px; }
+}
+
+.boxItem {
+  display: block;
+  text-align: center;
+  width: 123px;
+  height: 183px;
+  margin-bottom: 20px;
+  border: 1px dashed $gray50pct;
+  background: #fff url("data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSI0MHB4IiBoZWlnaHQ9IjQwcHgiIHZpZXdCb3g9Ii0xNC4xMjEgLTE0LjE1MyA0MCA0MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtMTQuMTIxIC0xNC4xNTMgNDAgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGcgaWQ9IkxheWVyXzJfY29weSI+DQoJPHBvbHlnb24gZmlsbD0iI0NDQ0NDQyIgcG9pbnRzPSIyNi4xLDUuMzI3IDYuNjUzLDUuMzI5IDYuNjUxLC0xNC4xMTcgNS4zMzcsLTE0LjExOSA1LjMzNyw1LjMyOSAtMTQuMTExLDUuMzI5IC0xNC4xMTEsNi42NDUgDQoJCTUuMzM3LDYuNjQ1IDUuMzM3LDI2LjA5MyA2LjY1MywyNi4wOTMgNi42NTMsNi42NDUgMjYuMSw2LjY0NSAJIi8+DQo8L2c+DQo8L3N2Zz4=")
+  no-repeat center center;
+  &.botm{
+    background: #fff url("data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSI0OS43MzZweCIgaGVpZ2h0PSI1MHB4IiB2aWV3Qm94PSIyMC44ODkgMjEgNDkuNzM2IDUwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDIwLjg4OSAyMSA0OS43MzYgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0NDQ0NDQyIgZD0iTTQ4LjgyMywzNi4xMDJjLTAuNDc2LDAuNTA4LTEuMjc0LDAuNzY2LTIuMTAzLDAuNzY2SDQzLjM1di04LjM1NmgzLjMzN2MwLjc3NywwLDEuNTc5LDAuMjU5LDIuMDM5LDAuNzY3DQoJYzAuMzI4LDAuMzY1LDAuNTQyLDAuNzkxLDAuNTQyLDEuMzkxYzAsMC44MDEtMC40MjQsMS41NjUtMS4yMDMsMS44NWMwLjg2LDAuMjgyLDEuMzkzLDEuMTMxLDEuMzkzLDIuMDE0DQoJQzQ5LjQ1OCwzNS4yMDYsNDkuMTg3LDM1LjcxMyw0OC44MjMsMzYuMTAyeiBNNDYuNjg3LDI5LjQ0M2gtMi4zMDh2Mi42MjloMi4zNDJjMC44NzQsMCwxLjQ3Ni0wLjM5MSwxLjQ3Ni0xLjMyMQ0KCUM0OC4xOTYsMjkuODgsNDcuNDg3LDI5LjQ0Myw0Ni42ODcsMjkuNDQzeiBNNDYuNzQ1LDMyLjk5MmgtMi4zNjZWMzUuOWgyLjM0MmMwLjkyMSwwLDEuNjYzLTAuNDQ3LDEuNjYzLTEuNDM3DQoJQzQ4LjM4NCwzMy41MzMsNDcuNjI5LDMyLjk5Miw0Ni43NDUsMzIuOTkyeiIvPg0KPHBhdGggZmlsbD0iI0NDQ0NDQyIgZD0iTTYwLjM0MSwzNC4xOTRjLTAuMjQ1LTAuMTQ2LTAuNTQ1LTAuMTUtMC44MjItMC4wMDZsLTEzLjI2NSw2LjgxN2MtMC4wNDMsMC4wMTUtMC4xNDgsMC4wMTUtMC4xOSwwDQoJbC0xMy4zMDItNi43NjRjLTAuMjc5LTAuMTQ0LTAuNTc2LTAuMTM4LTAuODE5LDAuMDEyYy0wLjI0NiwwLjE0OS0wLjM4NSwwLjQxNC0wLjM4NSwwLjcyOFY1Ny40M2gxLjE2NFYzNS41MjNsMTIuODE1LDYuNTE4DQoJYzAuMDEzLDAuMDA4LDAuMDI5LDAuMDA5LDAuMDQzLDAuMDE0djIxLjk0N2gxLjE2M3YtMjEuOTVjMC4wMTQtMC4wMDMsMC4wMjctMC4wMDgsMC4wNC0wLjAxM2wxMi43OC02LjU2OFY1Ny40M2gxLjE2M1YzNC45MjENCglDNjAuNzI2LDM0LjYxMSw2MC41ODMsMzQuMzQzLDYwLjM0MSwzNC4xOTR6Ii8+DQo8cG9seWdvbiBmaWxsPSIjQ0NDQ0NDIiBwb2ludHM9IjU2LjQ5Miw0NS4yNjMgNDkuNTIzLDQ1LjI2MyA0OS41MjMsNDYuNDI1IDUyLjQyNyw0Ni40MjUgNTIuNDI3LDUzLjI2NiA1My41ODgsNTMuMjY2IA0KCTUzLjU4OCw0Ni40MjUgNTYuNDkyLDQ2LjQyNSAiLz4NCjxwYXRoIGZpbGw9IiNDQ0NDQ0MiIGQ9Ik0zOS4wNDMsNTMuNjU5Yy0yLjM4MywwLTQuMzItMS45MzctNC4zMi00LjMyYzAtMi4zODIsMS45MzgtNC4zMiw0LjMyLTQuMzJjMi4zODEsMCw0LjMxOSwxLjkzOCw0LjMxOSw0LjMyDQoJQzQzLjM2MSw1MS43MjMsNDEuNDI0LDUzLjY1OSwzOS4wNDMsNTMuNjU5eiBNMzkuMDQzLDQ2LjE4MWMtMS43NDMsMC0zLjE1NywxLjQxNy0zLjE1NywzLjE1OGMwLDEuNzM4LDEuNDE0LDMuMTU2LDMuMTU3LDMuMTU2DQoJYzEuNzQxLDAsMy4xNTUtMS40MTcsMy4xNTUtMy4xNTZDNDIuMTk4LDQ3LjU5OSw0MC43ODMsNDYuMTgxLDM5LjA0Myw0Ni4xODF6Ii8+DQo8cGF0aCBmaWxsPSIjQ0NDQ0NDIiBkPSJNNjkuNDY1LDQ4LjM3NmMtMS4yMTUsMTEuNzk3LTExLjIxLDIxLjAyOS0yMy4zMjMsMjEuMDI5Yy0xMi45MjYsMC0yMy40NDctMTAuNTE5LTIzLjQ0Ny0yMy40NDYNCgljMC0xMi45MzEsMTAuNTIxLTIzLjQ0OCwyMy40NDctMjMuNDQ4YzEyLjExNCwwLDIyLjExLDkuMjMzLDIzLjMyMywyMS4wMzJoMS4xNjdjLTEuMjE5LTEyLjQ0LTExLjczNS0yMi4xOTQtMjQuNDktMjIuMTk0DQoJYy0xMy41NjksMC0yNC42MSwxMS4wMzktMjQuNjEsMjQuNjFjMCwxMy41NjksMTEuMDQxLDI0LjYwOSwyNC42MSwyNC42MDljMTIuNzU1LDAsMjMuMjctOS43NTQsMjQuNDg5LTIyLjE5NGgtMS4xNjZWNDguMzc2eiIvPg0KPC9zdmc+DQo=")
+    no-repeat center 40px;
+    div{
+      margin-top: 100px;
+      padding: 0 10px;
+      color: #cccccc;
+      }
+  }
+  &.full{ border: none; }
+  &:not(.full){ cursor: pointer; }
+}
+
+.boxInfoSummary{
+  border-top: $defaultBorder;
+  background-color: $gray5pct;
+  section{
+    border-top: $defaultBorder;
+    &:first-of-type{ border-top: none; }
+  }
+  .boxSummaryHeader{
+    margin: 20px auto 0;
+    text-align: center;
+    h6{ display: inline-block; }
+  }
+  table{ width: 100%; }
+  tr td:last-of-type{ text-align: right; }
+  button.edit{
+    float: right;
+    margin-top: -3px;
+    min-width: 70px;
+    padding: 4px;
+  }
+}
+
+
+// ===================
+// for skip month
+// ===================
+.skipMonth{
+  text-align: center;
+  img{ margin: 0 0 10px -50px }// to visually center
+  h4{ margin-bottom: 10px; }
+  .confirmationActions button{ min-width: 180px; }
+}
+
+
+// ===================
+// for order history
+// ===================
+.orderHistory{
+  .details{ 
+    background-color: $gray5pct;
+    padding: 20px 20px 5px;
+    border-top: $defaultBorder;
+    @include box-shadow( inset 1px 7px 9px -6px rgba(68, 68, 68, 0.2));
+  }
+
+  .dataTable{ 
+    max-width: 500px;
+    margin-bottom: 10px;
+    td{ 
+      padding: 0 10px 10px 0;
+      &:last-of-type{ text-align: right; }
+    }
+    .separator td{ padding-top: 10px; }
+    td.titles{ 
+      text-align: left;
+      margin-bottom: 10px; 
+      h5{ 
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .dataTableHeader{
+    border-bottom: $defaultBorder; 
+    padding: 0 0 10px 20px; 
+  }
+
+  li{
+    border-bottom: $defaultBorder;
+    padding: 0;
+    .col{ padding: 10px 20px; }
+  }
+}
+
+// ===================
+// for renewal
+// ===================
+.renewal{
+  section.shippingInfo, 
+  section.paymentInfo{
+    padding-top: 0px;
+    h1{ display: none; }
+  }
+  button.primary.fat{ margin-top: 20px }
+  .planSelect{ padding-left: 20px; }
+  .dataTable.forShipping{ margin-bottom: 40px; }
+}
+
+.customBigSelects.alt.forRenewal{
+  .topContent{ 
+    width: auto;
+    padding: 20px 10px 10px;
+  }
+  .bottomContent{ 
+    width: 200px;
+    height: 310px;
+    h1{ 
+      font-size: 35px;
+      margin: 0;
+    }
+    h4{ margin-bottom: 5px; }
+  }
+}
+
+
+// ===================
+// for mobile
+// ===================
+
+@media screen and (max-width: 805px){
+
+  .account{
+    background-color: $white;
+    .navForMobile{display: block;}
+    .navForDesktop{display: none;}
+    .innerWrapper{ text-align: center; }
+    .planInfo{
+      .customBigSelects.alt .topContent{ width: 100% }
+      .customBigSelects.alt .bottomContent{ width: 100%;  height: auto;}
+    }
+
+    .mainContent{ //for toggling sidenav
+      width: 100%;
+      display: none;
+      border: none;
+      padding: 0;
+      position: fixed;
+      overflow: auto;
+      height: 100%;
+      z-index: 10;
+      top: 40px;
+      padding-bottom: 20px;
+    }
+
+    .sideNav{ //for toggling sidenav
+      width: 90%;
+      border: none;
+      margin: 40px auto;
+      a{
+        border: none;
+        span.sideLink{
+          width: 100%;
+          margin: 0;
+        }
+        &.active{ border-left: none; }
+      }
+    }
+  }
+
+  .modalClosed{//for toggling sidenav
+    .account{
+      .mainContent{ display: none; }
+      .sideNav{ display: inline-block; }
+    }
+  }
+
+  .modalOpen{//for toggling sidenav
+    .account{
+      .mainContent{ display: block; }
+      .sideNav{ display: none; }
+    }
+  }
+
+  .customBigSelects.alt.forRenewal{
+    .topContent{ 
+      width: auto;
+      padding: 20px 10px 10px;
+    }
+    .bottomContent{ 
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+.renewal{
+  .enrollAccountInfo .formWrapper{ min-height: 0; }
+  section.shippingInfo, 
+  section.paymentInfo{
+    padding: 0 0 40px 0;
+  }
+  .orderSummary{ margin-bottom: 40px; }
+}
+
+
+
+@media screen and (max-width: 640px){
+  .account{
+    .accountInfo{
+      float: none;
+      .profileImageWrapper{
+        width: 100%;
+        float: none;
+        .profileImageBorder{ width: 90px; height: 90px; border-radius: 45px; }
+        .memberPhoto{  max-width: 90px; }
+      }
+      .content{
+        width: 100%;
+        float: none;
+        padding-right: 0;
+      }
+    }
+    .planInfo{
+      input[type=radio] { height: 1px; }
+      .radioWrapper{ margin-bottom: 0; }
+    }
+  }
+
+  // for my-box
+  .myBox{
+    .borderedBox{ border: none;}
+    .innerWrapper{ padding: 20px 0;}
+    .boxItemWrapper{
+      &.BOM{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      &.additionalBooks{ width: 100%; }
+    }
+  }
+}
+
+
+@media screen and (max-width: 480px){
+  .account .mainContent{ top: 10px; }
+  .myBox{
+    section{ padding: 20px 10px; }
+    .boxItemHolder{ padding: 20px 5px; }
+    .boxHeader{
+      .pointer{
+        position: absolute;
+        top: 18px;
+        &.right{ right: 10px;}
+        &.left{ left: 10px; }
+      }
+      h2{// @TODO: Some funky stuff to quick temp mobil header view
+        margin-top: -20px;
+        span:first-of-type{
+          display: block;
+          font-size: 14px;
+        }
+        span.highlightColor{
+          margin-top: -10px;
+          display: block;
+        }
+      }
+    }
+    .boxMessage{
+      text-align: center;
+      .col{ display: block; }
+      img{ margin: 0 auto 10px; }
+    }
+    button.edit{
+      padding: 2px;
+      font-size: 10px;
+      width: 40px;
+      min-width: 10px;
+    }
+  }
+
+  .login{
+    .borderedBox{ padding: 20px; }
+    .-w50{ width: 100%; }
+    .forgotPassword{
+      text-align: left;
+      margin: 10px 0;
+    }
+    fieldset{ margin-bottom: 10px; }
+    .join{
+      margin-top: 20px;
+      padding: 20px 0 20px;
+    }
+  }
+
+  // for order history
+  .orderHistory{
+    .dataTableHeader{ display: none; }
+    .details{ padding: 10px 20px 1px;}
+    .lineItemWrapper{ 
+      .collapseActions .upDownPointer svg{ margin-top: 0; }
+      li{
+        .col{ padding: 10px 0;}
+        .-w5{ padding: 0; }
+        .-w35{ 
+          width: 100%;
+          padding-bottom: 0;
+        }
+        .-w55{ 
+          width: 90%;
+          padding: 0 0 10px 0;
+        }
+        &:first-of-type{ padding-top: 0;}
+      }
+    }
+  }
+
+  .pageModal.forRenewalPlans{ top: 0; }
+}

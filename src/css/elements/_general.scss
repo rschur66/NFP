@@ -1,0 +1,528 @@
+.forMobile{ display: none; }
+.center{ text-align: center; }
+.noPadding{ padding: 0;}
+.noMargin{ margin: 0; }
+.overflowAuto{ overflow: auto;}
+.hide{ display: none; }
+.show{ display: block; }
+.selectable{ // allows user to highlight text
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+.bodyMessage{
+  border-radius: 30px;
+  border: 2px solid #000000;
+  background-color: $turquoise;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.itemList{
+  li{
+    margin-bottom: 15px;
+    &:last-of-type{margin-bottom: 0;};
+  }
+}
+
+ol.itemList{
+  font-family: $serif-stack;
+  list-style-type: decimal;
+  margin: 20px ;
+  padding-left: 20px;
+  li{ font-weight: 100; }
+}
+
+.dataTable{
+  padding: 10px 0;
+  border-collapse: collapse;
+  width: 100%;
+  .separator{ border-top: $defaultBorder; }
+  td{
+    padding: 10px 10px 10px 0;
+    text-align: left;
+  }
+}
+
+.galleryList{
+  li{
+    display: inline-block;
+    width: 280px;
+    text-align: left;
+    padding: 20px 40px;
+    border-left: 1px solid #ccc;
+    &:first-of-type{
+      border: none;
+    }
+  }
+  img{
+    width: 200px;
+    height: 140px;
+    margin-bottom: 10px;
+  }
+  h5{ margin: 10px 0}
+}
+
+.jacketsList{
+  li{
+    display: inline-block;
+    width: 20%;
+    padding-right: 10px;
+    &:last-of-type{ padding-right: 0;}
+  }
+}
+
+.borderedBox{
+  border: $defaultBorder;
+  padding: 20px;
+  margin: 0 0 20px;
+}
+
+// ===================
+// gridBoxes
+// ===================
+.gridBoxes{
+  .col{ 
+    width: 33%;
+    padding: 20px 60px;
+  }
+  h5{ margin-bottom: 10px}
+  img{ 
+    max-height: 90px;
+    margin-bottom: 15px;
+  }
+}
+
+
+
+// ===================
+// expand / collapse toggle @TODO see discussions and remove from there
+// ===================
+
+.collapseActions{
+  // text-align: right;
+  .upDownPointer{
+    display: inline-block;
+    svg{
+      vertical-align: top;
+      margin: 5px 0 0;
+    }
+  }
+  &.expanded{
+    .pointerDown{ display: none; }
+  }
+  &.collapsed{
+    .pointerUp{ display: none; }
+  }
+}
+
+
+
+// ===================
+// + / - expander
+// ===================
+
+.expanderWrapper{ cursor: pointer;}
+.expander{
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 100;
+  float: right;
+  vertical-align: middle;
+  margin-top: 16px;
+  svg{
+    polygon{ fill: $turquoise;}
+  }
+}
+
+// ===================
+// email capture
+// ===================
+.emailCapture{
+  background-color: $gray10pct;
+  text-align: center;
+  padding: 20px 0;
+  .singleInput{
+    input[type="email"]{
+      max-width: 180px;
+      color: $white;
+    }
+  }
+  h4{ 
+    color: $white;
+    padding: 18px;
+  }
+}
+
+
+// ===================
+// carousel // used on our story and landing page
+// ===================
+.carouselSlidesWrapper { position: relative; }
+
+.carouselSlides{
+  height: 495px;
+  position: relative;
+  color: #fff;
+  .checkerboard .square.image img{ max-height: 495px; }
+  li{
+    @include transition(opacity .45s ease-in);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 495px;
+    @include opacity(0);
+    z-index: 1;
+    &.active{
+      @include opacity(1);
+      z-index: 2;
+    }
+  }
+  .contentWrapper{
+    display: table;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+    height: 495px;
+    .content{
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.carouselBullets{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 20px;
+  left: 0;
+  z-index: 100;
+  li{
+    margin: 0 5px;
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $white;
+    @include opacity(0.7);
+    &.active{
+      background-color: $turquoise;
+      @include opacity(1);
+    }
+  }
+}
+
+.productCarousel{
+  margin-bottom: 20px;
+  width: 100%;
+  display: inline-block;
+  .pointerWrapper{
+    display: none;
+  //   width: 30px;
+  //   position: relative;
+  //   display:inline-block;
+  //   vertical-align: top;
+  }
+  .pointer{ 
+    position: relative;
+    display:inline-block;
+    margin-top: 100px;
+    &.left{ 
+      left: 0;
+      padding-right: 10px;
+    }
+    &.right{ 
+      right: 0;
+      padding-left: 10px;
+    }
+    &.hide{ display: none; }
+  }
+  .carouselSlides{ 
+    display: inline-block;
+    height: auto;
+    width: 100%;
+    vertical-align: top;
+    li{ 
+      height: auto; 
+      padding: 0;
+    }
+  }
+}
+
+// ===================
+// sliders
+// ===================
+.sliderWrapper{
+  width: 100%;
+  max-width: 1224px;
+  margin: 0 auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sliderItemsContainer {
+  @include transition(all 0.2s ease);
+}
+
+.sliderItem{
+  position: relative;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.pointer {
+  position: absolute;
+  cursor: pointer;
+  z-index: 100;
+  &.left { left: 40px;}
+  &.right { right: 40px; }
+}
+
+@mixin pointer-fade($mouseOutOpacity, $mouseOverOpacity) {
+  .pointer {
+    top: 0;
+    height: 100%;
+    opacity: $mouseOutOpacity;
+    @include transition(all 0.2s ease);
+  }
+  &:hover .pointer { opacity: $mouseOverOpacity; }
+}
+@mixin pointer-hide-mobile($breakpoint, $margin) {
+  $screen-carousel: $breakpoint + ($margin * 2);
+  @media screen and (max-width: $screen-carousel) {
+    .pointer { display: none; }
+  }
+}
+
+// ===================
+// sticky side promo
+// ===================
+.stickySidePromo{
+  display: inline-block;
+  vertical-align: top;
+  margin: 40px 0 0 0;
+  padding-left: 30px;
+  &.fixed{
+    position: fixed;
+    top: 140px;
+  }
+}
+
+// ===================
+// checkerboard
+// ===================
+.checkerboard {
+  display: table;
+  width: 100%;
+  .square{
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+    &.image{
+      text-align: center;
+      img{
+        width: 100%;
+        height: auto;
+        max-height: 340px;
+        max-width: 500px;
+        margin: auto;
+      }
+    }
+    &.content{ padding: 60px; }
+    &.forMobile{ display: none; }
+  }
+}
+
+// ===================
+// social
+// ===================
+.connect{
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+}
+
+.socialWrapper{
+    text-align: center;
+    margin-top: 40px;
+    h5, .socialMedia{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+.socialMediaIcon{
+  display: inline-block;
+  svg{
+    border-radius: 50%;
+    margin-left: 20px;
+    path, ellipse, polygon{ fill: $turquoise; }
+  }
+}
+
+// ================
+// for youTube videos
+// ================
+.videoWrapper, .iframeContainer {
+  position: relative;
+  padding-bottom: 38.25%; /* 56.25% = 16:9 */
+  padding-top: 25px;
+  height: 0;
+  max-width: 520px;
+  margin: 0 auto 20px;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ==================
+// video headers
+// ==================
+  .vidHeroHeader{
+    position: relative;
+    height: 500px;
+  }
+  .vidHeroBackground{
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .vidHeroContentWrapper{
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .vidHeroContent{
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+  }
+  video {
+    display: inline-block;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+// ===================
+// for mobile
+// ===================
+
+@media screen and ( max-width: 960px){
+  .gridBoxes{
+    .col{ 
+      width: 50%;
+      padding: 20px;
+    }
+  }
+}
+
+
+@media screen and ( max-width: 800px){
+  .sliderWrapper{ overflow: auto; }
+  .carouselSlides {
+    height: 520px;
+    .contentWrapper {
+      height: 520px;
+      max-width: 340px;
+      padding-left: 20px;
+    }
+    li{ height: 520px; }
+  }
+
+  .vidHeroHeader{
+    position: relative;
+    height: 400px;
+  }
+  video{ width: auto;}
+  .emailCapture{
+    padding: 20px 0 10px;
+    .singleInput{
+      label{
+        margin: 0 20px;
+        line-height: 22px;
+      }
+    }
+  }
+  .checkerboard .square.content { padding: 20px; }
+}
+
+@media screen and (max-width: 640px) {
+  .forMobile{ display: block; }
+  .forMobile.button, &button.forMobile { display: inline-block; }
+  .forDesktop{ display: none; }
+
+  .checkerboard{
+    .square{
+      display: block;
+      width: 100%;
+      &.content{
+        padding: 40px 0 0 0;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .carouselSlides{
+    .contentWrapper {
+      max-width: 340px;
+      padding-left: 20px;
+    }
+  }
+  .galleryList{
+    li{
+      padding: 20px;
+      width: 100%;
+      border: none;
+    }
+    img{ width: 100%; }
+  }
+  .emailCapture{
+    .singleInput{
+      input[type="email"]{ max-width: 170px;}
+      button.primary{ width: auto; }
+    }
+  }
+  .socialWrapper{
+    h5, .socialMedia{
+      display: block;
+      vertical-align: middle;
+      .socialMediaIcon svg{ margin: 10px 5px 0; }
+    }
+  }
+
+  .gridBoxes{
+    li:nth-child(odd){
+      padding: 20px 10px 0 0;
+    }
+    li:nth-child(even){
+      padding: 20px 0 0 10px ;
+    }
+    li:last-of-type{ padding: 20px 0;}
+    h5{ font-size: 13px; }
+    img{max-height: 70px; }
+  }
+
+}

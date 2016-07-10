@@ -1,0 +1,10 @@
+export default function() {
+  return [
+        {"id": 1, "year" : 1926, "image": "1926.jpg", "headline":"Our Legacy Begins", "body":"Harry Scherman founds the Club in New York City to bring the best new books to readers across the United States. Our very first selection, Lolly Willowes by British author Sylvia Townsend Warner, is still considered an all-time great 90 years later. "},
+        {"id": 2, "year" : 1936, "image": "1936.jpg", "headline":"Tomorrow Is Another Day", "body":'In its 10th year, the Club selects Gone with the Wind by unknown author Margaret Mitchell. Today, the book remains the second favorite of American readers (after the Bible). Mitchell wrote: “I wanted to thank [Book of the Month] from the bottom of my heart for selecting my book. It was quite the most exciting and unexpected thing that ever happened to me.”'},
+        {"id": 3, "year" : 1951, "image": "1951.jpg", "headline":"Hitting a Milestone", "body":'As the Club celebrates its 25th year and distributes its 100 millionth book, it selects J.D. Salinger’s The Catcher in the Rye, which becomes both the most-censored and the most-taught book in America.'},
+        {"id": 4, "year" : 1978, "image": "1978.jpg", "headline":"Launching New Authors", "body":'Thrill master Nelson DeMille writes his first book. Last year he dropped us a note: “I will be forever grateful to Book of the Month for ensuring that my first book, By the Rivers of Babylon, was not my last. When [the Club] selected Babylon in 1978, it reached hundreds of thousands of additional readers and became an instant best-seller.”'},
+        {"id": 5, "year" : 1986, "image": "1986.jpg", "headline":"Lovely Beyond Belief", "body":'Ernest Hemingway and the Club both celebrate 60 years with publication of Hemingway’s final novel Garden of Eden. The Club featured many of Hemingway’s books since The Sun Also Rises in 1926.'},
+        {"id": 6, "year" : 2016, "image": "2016.jpg", "headline":"A 90 Year Legacy Reborn", "body":'Book of the Month relaunches online and renews its commitment to helping avid readers discover the best books of our time.',}
+      ];
+}

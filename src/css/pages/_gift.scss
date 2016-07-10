@@ -1,0 +1,66 @@
+.forGift{ display:none;}
+.gift .forGift{ display: block;}
+
+.redeemGift{
+  .image{ 
+    background: url('/img/bom/giftPhoto.jpg') center center no-repeat;
+    background-size: cover;
+  }
+  .planDisplayBox{ margin-bottom: 30px; }
+}
+
+.success img{ margin: 20px 0 30px; }
+.redeemGift .loginSection { margin-top:30px; }
+
+.customBigSelects.giftFormat{
+  .topContent{
+    height: 180px;
+    width: 180px;
+    padding: 30px;
+    border-radius: 5px;
+  }
+}
+
+.customBigSelects.giftFormat input:checked ~ div{
+  svg.ill{
+    path, rect{ fill: $turquoise; }
+  }
+}
+
+.customBigSelects.alt.giftPlanSelect{
+  .bottomContent{ 
+    height: auto;
+    padding: 40px 20px;
+  }
+}
+
+// ================
+// for mobile 
+// ================
+
+@media screen and ( max-width: 960px){
+  .redeemGift .checkerboard .square.content { padding: 40px; }
+}
+
+@media screen and (max-width: 640px){
+  .redeemGift .square.content{ padding: 40px 20px;}
+  .accountCheck{
+    label{ 
+      display: block;
+      &:first-of-type{ margin-bottom: 10px;} 
+    }
+  }
+   .enrollConfirmation .-w33{ width: 100%; }
+}
+
+@media screen and ( max-width: 480px){
+  .customBigSelects.giftFormat .topContent{
+    width: 120px;
+    height: 116px;
+    padding: 16px;
+    svg{ 
+      width: 60px;
+      height: auto; 
+    }
+  }
+}

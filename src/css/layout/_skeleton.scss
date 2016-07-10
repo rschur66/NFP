@@ -1,0 +1,292 @@
+/* **************************
+   NOTES:
+   main breakpoints: 1224, 960, 800, 640, 480
+   content widths:
+      - landing: 1670px
+      - main: 1224px
+      - cms page width: 700px
+      - page modals: 912px
+      - confirmation modal: max width 500px
+// **************************/
+
+$screen-xxl: 1670px;
+$screen-xl: 1224px;
+$screen-lg: 960px;
+$screen-md: 800px;
+$screen-sm: 640px;
+$screen-xs: 480px;
+
+$screen-landing: $screen-xxl;
+$screen-main: $screen-xl;
+$screen-cms: 700px;
+$screen-modal: 912px;
+$screen-modal-confirm: 500px;
+
+$header-height-main: 63px;
+$header-height-mobile: 50px;
+
+.outerWrapper{ // container for sliding 'body' on mobile nav open
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $white;
+  @include transition(all 0.2s ease-out);//speed needs to match .mobileNav
+  &.mobileOpen{ 
+    right: -300px;
+    position: fixed; 
+  }
+}
+
+.bodyContent{
+  width: 100%;
+  margin: 96px auto 0;
+  text-align: left;
+}
+
+.bodyContentCMS{
+  width: 100%;
+  max-width: 700px;
+  margin: 150px auto 90px;
+  text-align: left;
+}
+
+.innerWrapper{// sets max width like body content but without top and bottom margins.
+  width: 100%;
+  max-width: 1224px;
+  margin: 0 auto;
+}
+
+.narrowContent{
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+section{
+  padding: 40px 0;
+  width: 100%;
+  text-align: left;
+  // + section{ padding-top: 0; }
+}
+
+.formSuccess { padding: 0 0 20px; }
+
+.responsiveFrameWrapper {
+  position: relative;
+  padding-bottom: 900px;
+  height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.siteMessage{
+  display: block;
+  position: absolute;
+  top: 96px;
+  left: 0px;
+  width: 100%;
+  z-index: 101;
+  .innerWrapper{
+    position: relative;
+    padding: 15px;
+    background-color: #ffffff;
+    min-height: 50px;
+    @include box-shadow(1px 1px 3px 1px rgba(68, 68, 68, 0.3));
+  }
+  h5{ 
+    margin: 0 auto 10px;
+    max-width: 90%;
+  }
+  .close{
+    position: absolute; 
+    top: 15px;
+    right: 15px;
+  }
+}
+
+// ===================
+// for grid
+// ==================
+
+.col{
+  vertical-align: top;
+  display: inline-block;
+  position: relative;
+  &.middle{ vertical-align: middle; }
+}
+
+.-w100{ width: 100%; display: block;}
+.-w90{ width: 90%; }
+.-w80{ width: 80%; }
+.-w85{ width: 85%; }
+.-w75{ width: 75%; }
+.-w70{ width: 70%; }
+.-w65{ width: 65%; }
+.-w60{ width: 60%; }
+.-w55{ width: 55%; }
+.-w50{ width: 50%; }
+.-w40{ width: 40%; }
+.-w35{ width: 35%; }
+.-w30{ width: 30%; }
+.-w33{ width: 33.3%; }
+.-w25{ width: 25%; }
+.-w20{ width: 20%; }
+.-w15{ width: 15%; }
+.-w10{ width: 10%; }
+.-w5{ width:  5%; }
+
+
+// ===================
+// for modals
+// ===================
+
+.modalWrapper {
+  display: none;
+  @include opacity(0);
+  zoom: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  @include transition(all 0.6s ease);
+  &.showing{
+    display: block;
+    @include opacity(1);
+  }
+  &.-forMobileDetails{
+    display: none;
+    background-color: transparent;
+  }
+}
+
+.modal{
+  display: inline-block;
+  position: fixed;
+  width: 80%;
+  max-width: 720px;
+  max-height: 600px;
+  overflow: auto;
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  @include translate(-50%, -50%);
+  text-align: left;
+  background: #fff;
+  z-index: 1001;
+  @include transition(all 0.6s ease);
+  &.confirmation{ max-width: 500px;}
+}
+
+
+.pageModal{
+  display: inline-block;
+  vertical-align: top;
+  max-width: 912px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  text-align: left;
+  background-color: white;
+  margin-bottom: 40px;
+  z-index: 400;
+  @include transition(all 0.4s ease);
+  section{
+    .content{
+      margin: 0 auto;
+      max-width: 600px;
+    }
+  }
+  .flag{
+    display: inline-block;
+    text-align: center;
+    margin: 0 0 10px;
+    padding: 10px 40px;
+    background-color: $turquoise;
+    color: $white;
+    h6{margin-bottom: 0;}
+  }
+}
+
+#body.modalOpen{
+  overflow: hidden;
+  .page{ margin-right: 15px; }
+  // header{ padding-right: 15px; }
+}
+
+.modalClose{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 8px 10px;
+  background-color: $turquoise;
+  @include transition(all 0.2s ease-out);
+  &:hover{ background-color: $turquoiseDark;}
+}
+
+// ===================
+// for mobile
+// ===================
+
+@media screen and (min-width: 801px) and (max-width: 1670px){
+  .innerWrapper{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 960px){
+  section { padding: 40px 20px; }
+  .pageModal {
+    top: 0;
+    margin-top: 0;
+  }
+  .bodyContent { margin: 80px auto 0; }
+  .bodyContentCMS {
+    margin: 110px auto 80px;
+    padding: 0 20px;
+  }
+  .siteMessage{ top: 80px}
+}
+
+
+@media screen and (max-width: 640px){
+  .pageModal .dateFlag { width: 100%; }
+  .bodyContent { margin: 47px auto 0; }
+}
+
+
+@media screen and (max-width: 480px){
+  // .bodyContent { margin: 47px auto 0; }
+  .bodyContentCMS { margin: 70px auto 40px; }
+  .siteMessage{ top: 50px;
+    .close{ right: 5px; }
+  }
+  //overide for mobile so desktop details does not show
+  .modalWrapper.-forDesktopDetails.showing { display:none; }
+  .modalWrapper.-forMobileDetails.showing { display: block; }
+
+  .pageModal {
+    top: 47px;
+    margin:0;
+  }
+  .modal{
+    padding: 20px;
+    width: 90%;
+  }
+}

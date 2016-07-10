@@ -1,0 +1,53 @@
+// Borders
+$defaultBorder: 1px solid $gray30pct;
+$defaultBorderRadius: 4px;
+
+.ourStory{
+  .heritage{
+    background: $gray10pct url('/img/bom/ill-city.svg') no-repeat center center;
+  }
+}
+
+.LandingHeroes{
+  .carouselSlides{
+    h4{ color: $blueDark; }
+    li:nth-child(1){
+      background-color: #c6e8e4;
+      .imgWrapper{ background-image: url('/img/bom/heroes/heroJulySelectKrk.png');}
+    }
+    li:nth-child(2){
+      background: #fbfdfc url('/img/bom/heroes/quiltedBkg.jpg') no-repeat center center;
+      background-size: cover;
+      .imgWrapper{ background-image: url('/img/bom/heroes/heroHuffington.png');}
+    }
+    li:nth-child(3){
+      background-color: #dae0e0;
+      .imgWrapper{ background-image: url('/img/bom/heroes/heroOpenBox.png');}
+    }
+    // For test
+    li.test1{
+      background-color: #eff2f5;
+      background-image: none;
+      .imgWrapper{ background-image: url('/img/bom/heroes/heroRichPrettyShelf.png');}
+    }
+
+    li.test2{
+      background: #fbfdfc url('/img/bom/heroes/quiltedBkg.jpg') no-repeat center center;
+      background-size: cover;
+      .imgWrapper{ background-image: url('/img/bom/heroes/heroHuffington.png');}
+    }
+  }
+}
+
+.aboutSelections{
+  .selectedBy{
+    background: $white url('/img/bom/ill_selectedBy.svg') no-repeat center center;
+  }
+}
+
+.enrollConfirmation{
+  .headerWrapper{
+    .left{background: $white url('/img/bom/ill-partyHornLeft.svg') no-repeat top center;}
+    .right{background: $white url('/img/bom/ill-partyHornRight.svg') no-repeat top center;}
+  }
+}

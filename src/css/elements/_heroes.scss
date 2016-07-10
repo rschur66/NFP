@@ -1,0 +1,70 @@
+// ===================
+// Heros
+// ===================
+
+.LandingHeroes{
+  .carouselSlides{
+    li{ overflow: hidden; }
+  }
+  .slide{
+    background-repeat: no-repeat; 
+    .block {
+      vertical-align: middle;
+      display: table-cell;
+      height: 495px;
+    }
+    .innerWrapper{ position: relative;}
+    img{ width: 100%;}
+  }
+  .button{ min-width: 230px; }
+  .imgWrapper{ 
+    // background: url('img/bom/heroes/heroTest.gif') no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
+
+// ===================
+// For Mobile
+// ===================
+
+
+@media screen and (max-width: 800px){
+
+  .LandingHeroes{
+    .slide{
+      .innerWrapper{ height: 520px; }
+      .block {
+        text-align: center;
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+      .-w40{ 
+        margin: 0 auto;
+        padding: 20px;
+        height: auto;
+        h1 + h4 { margin: -10px 0 0; }
+      }
+      .-w60{ height: 300px; }
+    }
+
+    .buttonWrapper{
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      width: 100%;
+      .button{ width: 96%; }
+    }
+    .carouselBullets{ display: none; }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .LandingHeroes .slide .-w60 { 
+    height: 266px; 
+    background-position: top center;
+  }
+}

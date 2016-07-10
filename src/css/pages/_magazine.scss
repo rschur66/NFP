@@ -1,0 +1,308 @@
+//====================
+// typography
+//====================
+.postTitle{ margin-bottom: 10px; text-transform: initial;}
+
+.postDate{
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.postSubtitle{
+ // nothing here
+}
+
+//====================
+// basic structure
+//====================
+.magazine { // needed for sticky promo
+  position: relative;
+  text-align: left;
+  .emailCapture{
+    padding:0;
+    h4{ color: $grayDark; }
+    .singleInput input[type="email"]{
+      color: $grayDark;
+      background-color: $gray10pct;
+    }
+  } 
+}
+
+@-moz-document url-prefix() {
+  .magazine .emailCapture .singleInput {
+    input[type="email"] {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+.postsListItem{
+  display: block;
+  text-align: left;
+  vertical-align: top;
+  a{ color: $grayDark; }
+}
+
+.postImg,
+.postContent img {
+  width: 100%;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.postPreSummary{ 
+  padding: 40px 0 0;
+  p:first-of-type{ margin-bottom: 0; }
+}
+.postDescription{
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+.magHeader{
+  padding: 30px 0;
+  text-align: center;
+  .logoIcon{
+    margin-bottom: 20px;
+    path, polygon{ fill: #000; }
+  }
+  .imgWrapper{ vertical-align: bottom;}
+  h2{
+    font-size: 31px;
+    line-height: 24px;
+  }
+  h5{ 
+    color: $grayDark;
+    padding: 0 60px;
+  }
+}
+
+.postsWrapper{
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+
+
+
+//====================
+// display variations
+//====================
+
+// for hero view
+.heroPostWrapper{ border-bottom: 1px solid $gray30pct; }
+.hero{
+  .postImg{ width: 65%;}
+  .postTitle{
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .postDescription{
+    text-align: center;
+    width: 35%;
+    vertical-align: middle;
+    padding-left: 20px;
+  }
+}
+
+// for featured view
+.featured{
+  position: relative;
+  .postImg{ margin-bottom: 20px; }
+  li{
+    display: inline-block;
+    width: 33%;
+    padding: 0 20px;
+    // &:last-of-type{ padding-right: 0; }
+    // &:first-of-type{ padding-left: 0; }
+  }
+}
+
+// for list view
+.postsListWrapper{
+  background-color: $gray10pct;
+  text-align: center;
+  .postsList{
+    margin-bottom: 40px;
+    width: 70%;
+    text-align: center;
+    .postsListItem{ margin-bottom: 40px;}
+    .postImg{ width: 40%;}
+    .postDescription{
+      width: 60%;
+      padding-left: 20px;
+    }
+    .button{ margin-top: 40px; }
+  }
+}
+
+// for post details view
+.post{
+  .innerWrapper{ text-align: center; }
+  .emailCapture{ margin-bottom: 40px;}
+  .back{
+    display: block;
+    margin-bottom: 30px;
+    .pointer{
+      display: inline-block;
+      position: relative;
+      &.left{ left: 0;}
+      margin-right: 10px;
+      svg{
+        width: 12px;
+        vertical-align: middle;
+      }
+    }
+  }
+  .postHeader{
+    display: block;
+    .postDescription{ width: 75%; }
+  }
+  .postImg,
+  .postContent img {
+    width: 100%;
+  }
+
+  .socialMedia{
+    text-align: right;
+    display: inline-block;
+    width: 25%;
+    padding-bottom: 5px;
+    .socialMediaIcon {
+      margin-left: 10px;
+      width: auto;
+      height: auto;
+    }
+    svg {
+      margin-left: 0;
+      width: 25px;
+      height: auto;
+    }
+  }
+  .featured{
+    background-color: $gray10pct;
+  }
+  .sectionHeader{ text-align: center}
+}
+
+
+// ===================
+// magPromoBlock
+// ===================
+
+.magPromoBlock{
+  .featuredWrapper{ padding-top: 0;}
+  .emailCapture{
+    background-color: $navy;
+    label{ color: $white; }
+  }
+
+  .featured{
+    .postImg{ min-width: 260px; }
+    .sliderItemsContainer li{
+      width: 33%;
+      padding-right: 40px;
+    }
+  }
+}
+
+// ===================
+// for mobile
+// ===================
+
+@media screen and (max-width: 1224px){
+  .magazine{
+    .-w70 { width: 100%; }
+    .stickySidePromo{ display: none; }
+  }
+  .postsWrapper{ width: 70%;}
+}
+
+
+@media screen and (max-width: 850px){
+  .magPromoBlock .featuredWrapper{ padding: 0;}
+  .magPromoBlock .featured .sliderItemsContainer li{ padding: 0 20px;}
+
+  .magazine {
+    .emailCapture{ padding:10px 0; }
+  }
+}
+
+
+@media screen and (max-width: 800px){
+  .magazine{
+    .postsListWrapper .postsList { width: 100%; }
+    .featured .postDescription {
+      width: 100%;
+      padding: 0 20px;
+    }
+    .postsWrapper {
+      width: 100%;
+      .back,
+      .postHeader,
+      section {
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .featured li {
+    width: 100%;
+    padding: 0;
+  }
+  .magazine{
+    .-w50 { width: 100%; }
+    .postsListItem{ margin-bottom: 40px;}
+    .hero .postsListItem{ margin-bottom: 0;}
+    .postImg {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  .heroPostWrapper{
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .hero{
+    .postTitle{ 
+      font-size: 26px;
+      line-height: 30px;
+    }
+    .postDescription{ 
+      text-align: left;
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+  .magHeader{
+    h5{ padding: 0;}
+    .imgWrapper{ display: none;}
+  }
+}
+
+
+@media screen and (max-width: 480px){
+  .magazine{
+    section{ padding: 20px 0; }
+    .postsListWrapper .postsList{
+      .postsListItem{ margin-bottom: 20px;}
+      .postImg,
+      .postContent img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .postDescription{
+        width: 100%;
+        padding: 0 20px;
+      }
+    }
+    .postsListWrapper{ background-color: transparent; }
+    .magHeader{ padding: 20px 20px; }
+  }
+  .magPromoBlock{
+    .magHeader{ padding: 10px 20px; }
+  }
+
+}

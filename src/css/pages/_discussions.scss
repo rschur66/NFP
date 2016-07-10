@@ -1,0 +1,263 @@
+.discussions{
+  position: relative;
+  .headerBox{
+    border-bottom: $defaultBorder;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .menuBox{
+    ul{ margin-bottom: 30px; }
+    ul:last-of-type{ margin-bottom: 0; }
+    .smallText{ text-transform: capitalize; }
+    .-w20{ text-align: right; }
+  }
+  .headerBox{
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+    h6{ margin: 8px 0 0 0; }
+  }
+  .mainContentBox{
+    padding-left: 20px;
+    .startNewDiscussion{ float: right; }
+    .borderedBox{
+      float: left;
+      width: 100%;
+    }
+  }
+  .discussionWrapper{
+    display: table;
+    width: 100%;
+    padding-top: 10px;
+    .h4 {
+      margin-bottom: 5px;
+      color: $blueDark;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    p { margin-bottom: 10px; }
+    &.root {
+      border-left: none;
+      padding-left: 0;
+      padding-bottom: 20px;
+    }
+  }
+  .memberImg{
+    display: table-cell;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    @include border-radius(25px);
+  }
+  .discussion{
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+  }
+  .discussionBook {
+    padding: 5px 20px;
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 10px;
+  }
+  .replies {
+    > .discussionWrapper {
+      border-left: 0;
+      padding-left: 0;
+      .discussionWrapper {
+        border-left: 2px solid $gray30pct;
+        padding-left: 5px;
+      }
+    }
+  }
+  .reply{
+    border-left: $defaultBorder;
+    padding-left: 20px;
+    margin-top: 20px;
+  }
+  .replyForm{
+    margin-bottom: 20px;
+    display: inline-block;
+    &.expanded{
+      display: block;
+      width: 100%;
+    }
+  }
+  .editForm {
+    margin-bottom: 20px;
+    display: inline-block;
+    float: right;
+    a.show { margin-top: -25px; }
+    textarea { height: 200px; }
+    &.expanded{
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .likeObj {
+    margin-top: 12px;
+    margin-right: 20px;
+    margin-left: auto;
+    width: 20px;
+    .likeButton{
+      margin-bottom: 5px;
+      height: 20px;
+      border-radius: 20px;
+      background: #bbb;
+      &.liked { background: #D2166E; }
+    }
+  }
+
+  .collapseActions{
+    svg{
+      polygon{ fill: $gray50pct; }
+    }
+  }
+
+  .replyCount{
+    &.expanded{
+    .pointerDown{ display: none; }
+    }
+    &.collapsed{
+      .pointerUp{ display: none; }
+    }
+    .upDownPointer{
+      display: inline-block;
+      svg{
+        vertical-align: top;
+        margin: 3px 12px 0 4px;
+      }
+    }
+  }
+  .mobileMenu{ display: none; }
+}
+
+// ====================
+// Markdown styling
+// ====================
+
+.discussionTitle,
+.discussionBody {
+  img { max-width: 100%; }
+}
+
+.discussions .discussionTitle p { margin-bottom: 0; }
+.discussionTitle p {
+  &, & > * {
+    margin-bottom: 0;
+    font-family: $serif-stack;
+    color: $blueDark;
+    text-transform: uppercase;
+  }
+}
+
+.discussionBody {
+  h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6 {
+    margin-bottom: 5px;
+  }
+  ol, ul {
+    margin-bottom: 10px;
+    margin-left: 15px;
+    font-family: $serif-stack;
+    color: $grayDark;
+    font-size: 19px;
+    line-height: 20px;
+    li { margin-bottom: 5px; }
+  }
+  ol {
+    list-style: decimal outside;
+    list-style-type: decimal;
+  }
+  ul {
+    list-style: disc outside;
+    list-style-type: disc;
+  }
+}
+
+// ====================
+// for mobile
+// ====================
+
+@media screen and ( min-width: $screen-md + 1){
+  .discussions {
+    .menuWrapper.hide { display: inline-block; } // override for modile toggle. Need to do better.
+  }
+}
+
+@media screen and ( max-width: $screen-md ){
+  .discussions {
+    .headerBox .viewTitle { display: none; }
+    .discussionBook { margin-top: 10px; }
+    .borderedBox {
+      border:none;
+      padding: 0;
+    }
+    .mobileMenu {
+      display: inline-block;
+      border: $defaultBorder;
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      overflow: hidden;
+      h6 {
+        display: inline-block;
+        margin: 0;
+      }
+      .pointerDown, .pointerUp { float: right; }
+      &.collapsed {
+        .pointerDown { display: inline-block; }
+        .pointerUp { display: none; }
+      }
+       &.expanded {
+        .pointerUp { display: inline-block; }
+        .pointerDown { display: none; }
+      }
+    }
+    .menuWrapper {
+      position: absolute;
+      z-index: 1;
+      top: 200px;
+      width: 100%;
+      max-width: 90%;
+      padding: 20px;
+      overflow: hidden;
+      background-color: $white;
+      border: $defaultBorder;
+      .borderedBox { margin-top: 0; }
+    }
+    .mainContentBox {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+  .discussionWrapper.root {
+    &  ~ & { border-top: 1px solid $gray30pct; }
+  }
+}
+
+@media screen and ( max-width: $screen-sm ){
+  .discussions {
+    .discussionWrapper {
+      display: block;
+      border-left: $defaultBorder;
+      padding-left: 20px;
+    }
+    .reply {
+      border-left: none;
+      padding-left: 0;
+    }
+    .memberImg { float: left; }
+    .discussion { display: initial; }
+    .startNewDiscussion { margin-bottom: 20px; }
+  }
+}
+
+@media screen and (max-width: $screen-xs) {
+  // Start A Discussion modal
+  .discussions .modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

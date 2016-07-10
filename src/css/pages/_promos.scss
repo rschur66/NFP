@@ -1,0 +1,45 @@
+.redeemGroupon{
+  .checkerboard .square{
+    &.content{
+      max-width: 330px;
+      padding: 120px 60px;
+    }
+    &.image{
+      padding-right: 110px;
+      text-align: right;
+      background-color: $turquoise; 
+      background-size: contain;
+      img{ 
+        width: 100%;
+        max-width: 430px;
+      }
+    }
+  }
+}
+
+//================
+// for mobile
+//================
+
+@media screen and (max-width: 1224px){
+  .redeemGroupon{
+    .checkerboard .square{
+      &.image{ 
+        text-align: center;
+        padding: 0 2%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .redeemGroupon{
+    .checkerboard .square{
+      &.content{
+        max-width: 100%;
+        padding: 30px 20px 0;
+      }
+      &.image{ padding: 8% 8%; }
+    }
+  }
+}

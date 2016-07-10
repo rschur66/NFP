@@ -1,0 +1,88 @@
+// ================
+// Footer
+// ================
+.footer{
+  color: $white;
+  padding: 40px 80px;
+  text-align: left;
+  float: left;
+  width: 100%;
+  a{ color: $white;}
+  .footerLinks{ 
+    display:inline-block;
+    width: 75%;
+    vertical-align: top;
+  }
+  .linkGroup{
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 60px; 
+    margin-bottom: 20px;
+  }
+  li{
+    font-size: 14px;
+    font-weight: 100;
+  }
+  .logo{
+    margin-top: 20px;
+    svg{ 
+      width: 100%;
+      max-width: 336px;
+    }
+  }
+  .finePrintWrapper{ 
+    text-align: center;
+    margin-top: 20px; 
+  }
+  .socialMediaIcon svg{
+    width: 30px;
+    height: 30px;
+  }
+  &.test .socialMediaIcon svg{
+    margin: 0 10px;
+  }
+
+  .itemList a{ 
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 960px){
+  .footer{ padding: 40px ; }
+}
+
+@media screen and (max-width: 800px){
+  .footer{
+    padding: 40px 20px;
+    .connect{ width: 40%; }
+    .footerLinks{ width: 60%; }
+    .linkGroup{ display: block; }
+    .logo{
+      svg{ width: 90%;}
+    }
+  }
+}
+
+ @media screen and (max-width: 480px){
+  .footer{
+    .connect{ 
+      width: 100%; 
+      text-align: left;
+      .socialMediaIcon svg{
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+    .footerLinks{ width: 100%; }
+    .linkGroup{ margin-bottom: 40px; }
+    .logo{
+      margin-top: 10px;
+      svg{ width: 70%;}
+    }
+    .finePrintWrapper{ 
+      text-align: left; 
+      margin-top: 40px;
+    }
+  }
+ }

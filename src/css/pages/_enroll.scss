@@ -1,0 +1,275 @@
+.forEnroll{ display:none;}
+.enroll .forEnroll{ display: inline-block;}
+.enrollConfirmation{
+  .actionMessage{
+    padding-bottom: 0;
+    .linkBoxes li{ 
+      width: 100%;
+      max-width: 675px;
+      margin: 0; 
+    }
+    .topContent{ 
+      height: auto;
+      padding: 20px 10px;
+      img{ 
+        width: 90%;
+        max-width: 370px;
+      }
+    }
+    .bottomContent{ 
+      display: block;
+      width: 100%; 
+      height: auto;
+      padding: 20px 0;
+    }
+  }
+  .headerWrapper{
+    max-width: 900px;
+    margin: auto;
+    .left, .right{ 
+      height: 200px;
+      background-size: contain;
+    }
+    .-w60{ padding: 0 20px; }
+  }
+}
+
+
+// ============================
+// enroll form
+// ============================
+
+.enrollAccountInfoWrapper{ margin-top: 70px; }
+.enrollAccountInfo{
+  max-width: 900px;
+  margin: auto;
+  h4.alt{ 
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  h6{ margin: 20px 0 0 0;}
+  .formWrapper{
+    border-right: $defaultBorder;
+    padding-right: 80px;
+    margin-bottom: 40px;
+    text-align: left;
+    min-height: 600px;
+  }
+}
+.orderSummary{
+  text-align: left;
+  padding-left: 70px;
+  h4{ margin-bottom: 10px; }
+  .planHeader{
+    a{ 
+      float: right;
+      margin-top: 7px;
+    }
+  }
+  .invitationCode{
+    border-top: $defaultBorder;
+    border-bottom: $defaultBorder;
+    margin: 20px 0 40px;
+    padding: 20px 0;
+    h5{ display: inline-block; }
+    .expander{ margin-top: 0; }
+    button.primary{ 
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  tr td:last-of-type{ text-align: right; }
+  .planDescription{ margin: 20px 0;}
+}
+
+.membershipTermsBox{ 
+  display: none;
+  border: 1px solid;
+  padding: 20px;
+  height: 200px;
+  overflow: auto;
+  margin-top: 20px;
+  &.show{ display: block; }
+  .bodyContentCMS{ 
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.planDisplayBox{
+    border: 2px solid $turquoise;
+    background-color: $white;
+    vertical-align: top;
+    border-radius: 9px;
+    text-align: center;
+    margin-bottom: 10px;
+    max-width: 460px;
+    margin: 0 auto 40px;
+    .topContent{
+      padding: 20px 0 10px;
+      text-align: center;
+      h4{ 
+        font-weight: bold;
+        margin-bottom: 0;
+        text-align: center;
+      }
+      .checkMark{
+        margin-top: 10px;
+        svg{
+          width: 50px;
+          height: 50px;
+          margin-left: 15px;
+          circle {fill: #11afe2;}
+        }
+      }
+    }
+    .bottomContent{
+      background-color: $turquoise;
+      padding: 10px;
+      h1, h4{ 
+        color: $white;
+        margin-bottom: 0;
+      }
+      h1{ margin-bottom: 5px;}
+      h4{
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+
+.enterEmailWrapper{
+  .termsLink{ margin-top: 20px; }
+  .button.primary{ margin-top: 20px; }
+  h1 { 
+    max-width: 500px;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+}
+// ============================
+// Join Block
+// ============================
+
+.JoinBlock{  
+  padding: 64px 20px;
+  background-color: $turquoise;
+}
+
+// ============================
+// Custom Checkmark box overides 
+// from forms/button css
+// ============================
+
+.enterEmail{ input{ max-width: 470px; } }
+.enroll, .gift { button.primary{ margin-top: 20px;} }
+
+.selectPlan {
+  background: #ffffff; 
+  background: -moz-linear-gradient(top,  #ffffff 1%, #ffffff 40%, #f5f5f5 40%, #f5f5f5 100%); 
+  background: -webkit-linear-gradient(top,  #ffffff 1%,#ffffff 40%, #f5f5f5 40%, #f5f5f5 100%); 
+  background: linear-gradient(to bottom,  #ffffff 1%,#ffffff 40%,#f5f5f5 40%, #f5f5f5 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+}
+
+.surveyFrequency{
+  .customBigSelects{
+    max-width: 580px;
+    margin: 0 auto;
+  } 
+}
+
+
+// ===================
+// for whatsIncluded block
+// ===================
+
+.whatsIncluded{
+  h4{ 
+    font-weight: bold; 
+    margin-bottom: 10px;
+  }
+}
+
+// ===================
+// for mobile
+// ===================
+
+@media screen and (max-width: 800px){
+  .enrollAccountInfo{
+    .formWrapper,.summaryWrapper{ 
+      width: 100%;
+      padding: 0; 
+      border-right: none
+    }
+    .formWrapper{ margin-bottom: 0; }
+    .-w30{ margin-top: 20px; }
+  }
+  .orderSummary{ 
+    padding: 0;
+    h4{ text-align: center; }
+    .planDescription{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .whatsIncluded{ // @TODO : this is dirty-forcing spacing until illustrations can be re-cut without whitespace
+    .skip .image{ margin: 30px 0 16px;}
+    .hardcover .image{ margin-bottom: 10px; }
+    .extraBooks .image{ margin: 5px 0 -9px; }
+  }
+
+  .enrollConfirmation{
+    .headerWrapper{
+      .left{display: none}
+      .right{display: none}
+      .-w60{ 
+        width: 100%; 
+        padding:0;
+      }
+    }
+
+    .LinkBoxesWrappper{ 
+      padding: 0;
+      margin: 40px 0;
+    }
+    .linkBoxes{
+      li{ 
+        width:100%;
+        margin: 10px 0;
+      }
+      .bottomContent{
+        display: block;
+        height: auto;
+        width: 100%;
+        padding: 20px;
+      }
+    }
+  }
+  .whatsIncluded{
+    .selectPlan { background: $white; }
+    .-w50{ 
+      width: 100%;
+      margin-bottom: 10px;
+      img{ vertical-align: bottom;}
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .enrollAccountInfoWrapper{ margin-top: 40px; }
+  .enrollConfirmation{
+    .actionMessage{
+      .image{ height: 150px;}
+      .button{ width: 100%; }
+      .square-2{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

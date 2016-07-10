@@ -1,0 +1,531 @@
+.myBoxPage{
+  .headerWrapper{ padding-bottom: 20px; }
+}
+
+.selectionsNav{
+  margin-bottom: 40px;
+  display: table;
+  width: 100%;
+  @include box-shadow(1px 1px 3px 1px rgba(68, 68, 68, 0.3));
+    a{
+      display: table-cell;
+      border-right: 1px solid $gray30pct;
+      width: 33.33%;
+      vertical-align: middle;
+      padding: 20px 10px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      @include transition(all 0.2s ease);
+      &.active, &:hover{
+        background-color: $turquoise;
+        color: $white;
+      }
+      &:last-of-type{ border-right: none; }
+    }
+}
+
+// ===============
+// for botm select
+// ===============
+.sliderItemsContainer{
+  li{
+    &:first-of-type{
+      .selectBar{ border-left:1px solid $gray50pct}
+    }
+    &:last-of-type{
+      .selectBar{ border-right:1px solid $gray50pct}
+    }
+  }
+}
+
+.selectBarWrapper { height: 80px; }
+
+.selectBarWrapper.alt {
+  margin-top: 30px;
+  height: auto;
+  position: relative;
+}
+
+.selectBar{
+  position: relative;
+  height: 15px;
+  background: transparent
+  url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjYwMHB4IiBoZWlnaHQ9IjFweCIgdmlld0JveD0iMCAwIDYwMCAxIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2MDAgMSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cmVjdCBmaWxsPSIjQzNDM0M5IiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjEiLz4NCjwvc3ZnPg0K")
+  no-repeat center;
+}
+
+.bulletCircle{
+  border-radius: 50%;
+  border: 1px solid $turquoise;
+  height: 15px;
+  width: 15px;
+  margin: 0 auto;
+  background-color: $white;
+}
+
+.logoIconDisc{
+  display: inline-block;
+  background-color: $turquoise;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -13px auto 0;
+  text-align: center;
+  svg{
+    margin: 5px 1px 0 0;
+    width: 32px;
+    height: 30px;
+    path, polygon{ fill: $white; }
+  }
+  &+h5{
+    margin: 10px 0 0;
+    color: $turquoise;
+    font-weight: bold;
+    font-size: 13px;
+  }
+}
+
+.sliderItemsContainer{
+  li{
+    display: inline-block;
+    width: 20%;
+    margin-bottom: 40px;
+    vertical-align:top;
+  }
+  .judgesPick{
+    position: relative;
+    padding: 0 20px;
+    width: 195px;
+    height: 325px; //335 to get proper aligment of selection 'select bar'
+    margin: 0 auto 40px; // bottom 40px
+  }
+  .noActions{ // for non picking period when there is no actions.
+    margin-bottom: 80px;
+    .judgesPick{ height: 306px; }
+  }
+  .cover {
+    height: auto;
+    width: 100%;
+    cursor: pointer;
+    margin: 10px 0;
+    @include box-shadow(4px 2px 9px 1px rgba(68, 68, 68, 0.2));
+
+  }
+  .judgeInfo{
+    position: relative;
+    padding: 40px 0 0;
+  }
+  .judgeImg {
+    display: block;
+    height: 90px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -55px;
+  }
+  button, .button{ margin: 10px 0;}
+}
+
+
+.botmSwitchConf{
+  img{
+    margin-bottom: 20px;
+    &.ill{ max-width: 100px; }
+  }
+  .confirmationActions{
+    width: 100%;
+    max-width: 280px;
+    margin: 20px auto;
+    a.button{
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}
+
+// ===================
+// for selections list
+// ===================
+.selectionsList .sliderItemsContainer .judgesPick{ margin-bottom: 20px; }
+.selections{
+  section{
+    text-align: center;
+    border-bottom: 1px solid $gray30pct;
+    padding: 40px 0;
+    // &:first-of-type{ padding-top: 0; }
+    h1{ margin-bottom: 30px; }
+  }
+  .sliderItemsContainer li{ margin-bottom: 0; }
+}
+
+.selectionsListWrapper{
+  h1 + h4 { margin: -10px 0 10px; }
+}
+// ===================
+// for other favorites list
+// ===================
+.otherFavorites{
+  // .selectionsNav{ margin-bottom: 20px; }// for suggestion form
+  .prodList{
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px 20px 40px;
+    li.rowWrapper{
+      padding: 40px 0;
+      border-top: $defaultBorder;
+      &:first-of-type{ // commented out for suggestion form
+       border: none;
+       padding-top: 0;
+      }
+      &:last-of-type{ padding-bottom: 0; }
+      img{
+        width: 100%;
+        height: auto;
+        max-width: 160px;
+        @include box-shadow(4px 2px 9px 1px rgba(68, 68, 68, 0.2));
+      }
+    }
+    button.forMobile, .button.forMobile { margin-bottom: 10px; }
+  }
+  .col{ text-align: left; }
+  .-w80{ padding-left: 20px; }
+  .tag{ float: right; }
+  .blurb{
+    a{ margin-left: 10px; }
+  }
+}
+
+.swag{
+  .prodList{
+    max-width: 1224px;
+    li.rowWrapper img{ 
+      width: 100%;
+      max-width: 390px; 
+    }
+  }
+  .-w35{ padding-right: 20px; }
+}
+// ======================
+// for selection details
+// ======================
+.selectionDetails{
+  .pointer{ top: 310px;  }
+  .addActions{
+    margin: 30px 0;
+    h5{ margin-bottom: 10px;}
+    &.isBotm{
+      margin-bottom: 0;
+      .-w30{ padding-right: 20px; }
+      .-w70{
+        text-align: left;
+        padding-left: 30px
+      }
+    }
+  }
+  .selectionHeader{
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    .quoteWrapper{
+      text-align: left;
+      .quote + div{ margin-top: 20px;}
+    }
+    .titleBox{
+      text-align: left;
+      padding-right: 20px;
+      margin-top: 20px;
+    }
+    .judgeImg{
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      width: 70px;
+    }
+    .logoIconDisc{ margin: 5px 0 0; }
+  }
+  .judgeNameWrapper{
+    display: inline-block;
+    vertical-align: middle;
+    h6{margin-bottom: 0;}
+  }
+  section.review{
+    padding: 60px 40px;
+    margin-top: 60px;
+    .content{ text-align: left; }
+    .reviewTitle{
+      margin-bottom: 15px;
+      text-align: center;
+      font-weight: 200;
+    }
+    .byLine{
+      text-align: center;
+      font-weight: normal;
+      margin-bottom: 40px;
+    }
+  }
+  .title{ margin-bottom: 10px; }
+  .cover{
+    display: inline-block;
+    padding-right: 20px;
+  }
+
+  .authorWrapper{
+    .content{ text-align: left;}
+    img{
+      width: 70px;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+    .authorName{ display: inline-block;}
+    p{ margin-left: 90px; }
+  }
+}
+
+// ===================
+// for Select Suggestion Form
+// ===================
+
+  .selectSuggestionForm{
+    max-width: 1000px;
+    margin: auto;
+    text-align: right;
+    border-bottom: $defaultBorder;
+    padding-bottom: 20px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    .expander{ margin-top: 0; }
+    h5{ 
+      display: inline-block;
+      padding-right: 10px;
+      }
+    input{ 
+      max-width: 200px;
+      padding: 7px 20px;
+      margin-right: 10px;
+    }
+    button.primary{
+      padding: 7px 20px;
+    }
+    &.forMobile{
+      border-top: 1px solid #dbdbdf;
+      border-bottom: none;
+      padding: 20px 20px 0;
+    }
+  }
+
+// ===================
+// for mobile
+// ===================
+
+// mobile details container:
+
+.-forMobileDetails {
+  @include transition(all 0.4s ease-out);
+  padding-bottom: 100px; //need to change when we have final height of details bottom nav
+  z-index: 30;
+  .pageModal{
+    margin-bottom: 50px;
+    text-align: center;
+    padding-top: 40px;
+    .topWrapper{ padding: 0 20px; }
+  }
+  .review{ background-color: $gray10pct; }
+  .title{ margin-bottom: 10px }
+  .author{ margin-bottom: 20px }
+  .quote{ margin: 0 0  10px 0 }
+  .authorImg{
+    display: inline-block;
+    width: 20%;
+    vertical-align: middle;
+  }
+  .authorWrapper .author{  display: inline-block; }
+  .bottomNav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+    background-color: $gray10pct;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid $gray30pct;
+    li{
+      display: inline-block;
+      margin-right: 20px;
+      &:last-of-type{ margin-right: 0; }
+    }
+    h6{ margin-bottom: 5px; }
+    .cover{
+      width: 40px;
+      border: 2px solid $gray10pct;
+      &.active{
+        border: 2px solid $white;
+        @include box-shadow(2px 4px 6px 1px rgba(68, 68, 68, 0.5));
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px){
+  .selectBarWrapper, .selectionsList{
+    .narrow{
+      padding: 6px 12px;
+      font-size: 10px;
+      width: auto;
+    }
+  }
+
+  .logoIconDisc + h5{
+    margin-top: 7px;
+    font-size: 12px;
+  }
+
+  .selectionsListWrapper{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sliderItemsContainer{
+    display: table;
+    width: 100%;
+    .sliderItem{
+      display: table-cell;
+      padding-bottom: 40px;
+    }
+    .judgesPick{
+      width: 150px;
+      padding: 0 10px;
+      margin-bottom: 0;
+      height: 340px;
+      .judgeName{display:block;}
+    }
+  }
+  .selectionDetails{
+    .pointer{ display: none; }
+  }
+
+  .moreSelections{
+    .judgesPick{ height: 310px; }
+  }
+
+  .NewSelections .selectionDetails {
+    section {padding: 40px 20px; }
+    .cover{
+      padding-right: 0;
+      &.-w20{
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  }
+
+  .selectSuggestionForm{
+    text-align: center;
+    h5{ 
+      display: inline-block;
+      padding-right: 10px;
+
+      }
+    input{ 
+      max-width: 300px;
+      width: 60%;
+    }
+    button.primary{
+      padding: 7px 10px;
+      width: 30%;
+      min-width: 10px;
+      max-width: 120px;
+    }
+    &.forDesktop{ display: none; }
+    &.forMobile{ display: block; }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .selectionDetails {
+    .selectionHeader{ padding:0 20px; }
+    section {padding: 20px; }
+  }
+  .howSelected{
+    .-w50{ width: 100% }
+  }
+  .otherFavorites, .swag{
+    .tag { float: none; }
+    .-w80, .-w20, .-w70, .-w30, .-w35, .-w65{
+      width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+    .swag{
+      .-w35{ padding-right: 0; }
+    }
+    .prodList {
+      padding-top: 20px;
+      .rowWrapper{
+        img {margin-bottom: 20px;}
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .selectionsNav a { font-size: 12px; }
+  .botmSwitchConf .confirmationActions{
+    margin-bottom: 0;
+    a.button{ margin-top: 0; }
+  }
+
+  .selectionDetails{
+    .cover{ padding-right: 0; }
+    .judgeNameWrapper{
+      text-align: center;
+      margin-top: -70px;
+      img{ width: 70px; }
+    }
+    .authorWrapper{
+      .author{ padding-left:0;}
+      p{ margin: 10px 0; }
+      img{
+        width: 50px;
+        margin-right: 10px;
+      }
+    }
+    .addActions{
+      button, .button{width: auto;}
+      &.isBotm{
+        .-w70{display: none;}
+        .-w30 {
+          width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+
+// for selections mobile view
+  .selectBarWrapper{
+    position: absolute;
+    top: 15px;
+    right: 0;
+    left: 0;
+    button{width: auto;}
+  }
+  .myBoxPage{
+    h1 + h4 {  margin-bottom: 0; }
+  }
+  .sliderItemsContainer.featuredList{
+    .sliderItem{
+      padding-bottom: 0;
+      height: 517px;
+    }
+    .judgesPick{
+      width: 230px;
+      height: 460px;
+      padding: 80px 30px;
+    }
+  }
+  .skipMonth{  padding-top: 20px;}
+}

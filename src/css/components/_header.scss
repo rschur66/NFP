@@ -1,0 +1,354 @@
+// ================
+// Header
+// ================
+
+header {
+  position:fixed;
+  width:100%;
+  z-index: 200;
+  @include box-shadow(0px 2px 4px 3px rgba(68, 68, 68, 0.2));
+  .msgBar {
+    padding: 10px;
+    color: #fff;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 200;
+  }
+  .navMain {
+    height: $header-height-main;
+    text-align: left;
+  }
+  .logo {
+    display: table;
+    float: left;
+    text-align: left;
+    height: $header-height-main;
+    vertical-align: middle;
+    a {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    svg {
+      position: relative;
+      top: 2px;
+      width: 280px;
+      path { fill: $blueDark; }
+    }
+  }
+  nav {
+    display: inline-block;
+    float: right;
+    width: 65%;
+    min-width: 640px;
+    text-align: center;
+    > ul {
+      display: table;
+      table-layout: fixed;
+      height: $header-height-main;
+      width: 100%;
+      &.loggedOut li:first-of-type { width: 150px; }
+      &.loggedIn li:last-of-type { width: 70px; }
+    }
+    li {
+      display: table-cell;
+      width: auto;
+      text-align: center;
+      vertical-align: middle;
+      a:hover { color: $turquoise; }
+      &.forMobile { display: none; }
+      .button.primary { white-space: nowrap; } // 'Join Now' button
+      .boxIcon {
+        display: block;
+        position: relative;
+        margin: 0 0 0 auto;
+        padding-top: 15px;
+        height: $header-height-main;
+        width: 70px;
+        background-color: $white;
+        text-align: center;
+        .boxCount{
+          position: absolute;
+          top: 8px;
+          left: 10px;
+          height: 18px;
+          width: 18px;
+          border-radius: 50%;
+          background-color: $turquoise;
+          color: $white;
+        }
+      }
+      .headerBoxLink:hover .boxIcon,
+      .headerBoxLink.active .boxIcon{
+        background-color: $turquoise;
+        @include transition(all 200ms ease-in-out)
+        svg path{ 
+          fill: $white;
+          @include transition(all 200ms ease-in-out)
+        }
+        .boxCount{
+          background-color: $white;
+          color: $turquoise;
+        }
+      }
+    }
+  }
+  .navSecondary, nav {
+    text-align: right;
+    color: $white;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .navSecondary {
+    float: right;
+    ul { display: inline-block; }
+    li {
+      display: inline-block;
+      padding: 0 0 0 20px;
+      width: auto;
+      &.forMobile { display: none; }
+    }
+    a { color: $gray30pct; }
+    .groupOne {
+      padding-right: 20px;
+      border-right: 1px solid $gray30pct;
+    }
+  }
+  .upDownPointer{
+    display: inline-block;
+    margin-left: 5px;
+    .pointerUp{ display: none; }
+  }
+}
+
+.giftIcon{
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+
+.heartIcon{
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0px;
+}
+
+.header nav li{
+  position: relative;
+  .subNav{ display: none; }
+}
+
+.header nav li:hover{
+  .subNav{
+    display: block;
+    width: 140px;
+    position: absolute;
+    top: 62px;
+    right: -20px;
+    background-color: $white;
+    @include box-shadow(1px 3px 3px 1px rgba(68, 68, 68, 0.3));
+    li{
+      display: block;
+      margin: 10px 0 20px 20px;
+      padding: 0;
+      width: 100px;
+      text-align: left;
+    }
+  }
+}
+
+// ===================
+// for mobile
+// ===================
+
+.burger{
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  right:-60px;
+  top: 55px;
+  cursor: pointer;
+  &.open{ right: 0;}
+}
+
+.burger span,
+.burger span:before,
+.burger span:after {
+  @include border-radius(0);
+  height: 2px;
+  width: 30px;
+  background: $blueDark;
+  position: absolute;
+  display: block;
+  content: '';
+}
+.burger span:before { /*top bun*/top: -8px }
+.burger span:after { /*bottom bun*/bottom: -8px }
+
+/* animate hamburger */
+.burger span, .burger span:before, .burger span:after { @include transition(all 400ms ease-in-out) }
+.burger.open{  top: 0; }
+.burger.open span {
+  top: 16px;
+  right: -4px;
+  background-color: transparent
+}
+.burger.open span:before, .burger.open span:after {
+  top: 0;
+  width: 18px;
+}
+.burger.open span:before { transform: rotate(45deg) }
+.burger.open span:after { transform: rotate(-45deg) }
+
+
+.mobileNav{
+  display: none;
+  padding: 20px 0 0 0;
+  background-color: $turquoise;
+  color: $white;
+  z-index: 300;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  padding-bottom: 40px;
+  @include transition(all 0.2s ease-out);
+  &.open{
+    left: 0;
+    display: block !important;
+    position: absolute;
+    height: 100%;
+  }
+  li{
+    margin: 0 20px;
+    border-bottom: 1px solid $white;
+    padding: 20px 0;
+    a{
+      text-transform: uppercase;
+      color: $white;
+      font-size: 16px;
+      font-weight: 100;
+    }
+  }
+  .navSecondary{
+    .groupOne li{ border-bottom: none;}
+  }
+  .mobileHide{ display: none;}
+  .subNavWrapper{
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    .upDownPointer{ display: none;}
+    .subNavHeader{ display: none; }
+  }
+  .subNav li:nth-of-type(4){ border-bottom: none; }//@TODO: dirty as position might change. Find a better way
+  .mobileButton{ 
+    margin-top: 20px;
+    border-radius: 24px;
+    padding: 12px;
+    background-color: $white;
+    text-align: center;
+    a{ color: $turquoise; }
+  }
+}
+
+.backArrow {
+  display: none;
+  z-index: 500;
+  position: fixed;
+  left: 10px;
+  top: 14px;
+  cursor: pointer;
+}
+
+// ===================
+// responsive styling
+// ===================
+
+@media screen and (max-width: 1224px) {
+  .header {
+    nav > ul li .button.primary {
+      padding: 10px 15px;
+      font-size: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .mobileNav, .burger { display: block; }
+  .mobileNav .navSecondary .forMobile { display: block; }
+  ul.loggedOut {
+    li:last-of-type { display: none; }
+  }
+  .header {
+    .innerWrapper { padding: 0; }
+    position: fixed;
+    width: 100%;
+    .navMain {
+      height: $header-height-mobile;
+      overflow: hidden;
+      text-align: center;
+    }
+    .logo {
+      height: $header-height-mobile;
+      width: 50%;
+      margin-left: 25%;
+      a { text-align: center; }
+      svg {
+        top: 3px;
+        width: 200px;
+      }
+    }
+    nav {
+      width: 25%;
+      min-width: 70px;
+      > ul {
+        height: $header-height-mobile;
+        li {
+          &:not(:last-of-type) { display: none; }
+          .boxIcon {
+            height: $header-height-mobile;
+            padding-top: 12px;
+            padding-left: 5px;
+          }
+          .boxCount.smallText { top: 5px; }
+        }
+      }
+    }
+    .navSecondary li { display: none; }
+    .msgBar .message { margin-right: 0; }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .modalOpen{
+    .burger { display: none; }
+    .backArrow { 
+      display: inline-block;
+      top: 46px; 
+      left: 20px;
+    }
+  } 
+}
+
+@media screen and (max-width: 640px) {
+  header nav > ul.loggedIn li:last-of-type{ width: 60px; }
+  .header {
+    nav > ul li .boxIcon{ width: 60px; }
+    .logo{ margin-left: 20%; width: 55%}
+    .logo svg { width: 168px; }
+    .msgBar { display: none; }
+    a.button { display: none; }
+  }
+  .burger {
+    top: 24px;
+    right: -47px;
+  }
+  .modalOpen .backArrow { 
+    display: inline-block;
+    top: 14px; 
+  }
+}

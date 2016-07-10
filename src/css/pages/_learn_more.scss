@@ -1,0 +1,66 @@
+.learnMore{
+  .vidHeroBackground{ 
+    // background: #c1c5c6 url('/img/bom/unboxing.gif') center center;
+    background-color: #babdc0;
+    background-size: cover;
+    text-align: center;
+    img{ display: none; }
+    video{
+      margin: auto;
+      width: auto;
+      position: relative;
+    }
+  }
+  .middleRow{ margin: 45px 0}
+  .bodyMessage{ // @TODO: Clean Up as this is q quick positioning for extended pick period message;
+    margin: -30px 0 20px;
+  }
+  .checkerboard .square.image {
+    text-align: center;
+    img{ max-width: 520px; }
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .learnMore{
+    .vidHeroHeader{ 
+      height: 316px; 
+    }
+    .vidHeroBackground{ 
+      background-color: #bdbdbd;
+      video{ display: none;}
+      img { display: inline-block; }
+    }
+  }
+}
+
+@media screen and (max-width: 800px){
+  .learnMore{
+    .vidHeroBackground{ 
+      video{
+        position: absolute;
+        right: -431px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .learnMore{
+      .checkerboard .square.content { padding-top: 10px; }
+      .checkerboard .square.image.forMobile{ display: block; }
+      .forDesktop{ display: none; }
+      .bodyMessage{ // @TODO: Clean Up as this is q quick positioning for extended pick period message;
+        margin: -60px 0 20px;
+      }
+  }
+}
+
+
+@media screen and (max-width: 480px){
+  .learnMore{
+    .vidHeroBackground{ 
+      img { margin-left: -220px} // to fake center;
+    }
+  }
+}

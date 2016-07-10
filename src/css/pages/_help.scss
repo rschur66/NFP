@@ -1,0 +1,32 @@
+.help{
+  .dataTable{ 
+    width: auto;
+    margin: 0 auto;
+    td{ padding: 0 10px 10px 0; }
+    .h4{ 
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+  img{ margin-bottom: 20px; }
+  .pageModal.forContact{ 
+    max-width: 600px;
+   }
+}
+
+
+//================
+// for mobile
+//================
+
+
+@media screen and (max-width: 480px) {
+  .help{
+    .contactUs{ padding: 20px 0; }
+    .dataTable{
+      td{ padding: 0 0 10px; }
+      .h4{ font-size: 14px; }
+    }
+    .FAQs{ padding: 20px 0; }
+  }
+}

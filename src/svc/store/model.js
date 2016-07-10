@@ -169,5 +169,6 @@ export async function init() {
 }
 
 export function match(str) {
+  console.log('matches', matches.find(m=>m.re.test(str)));
   return matches.find(m=>m.re.test(str));
 }
